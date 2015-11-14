@@ -8,6 +8,8 @@ xcode_sdk: iphonesimulator9.1
 before_install:
   - brew update
   - brew uninstall xctool && brew install --HEAD xctool
+  - gem install cocoapods
+  - pod install
 
 xcode_project: FaradayHAL.xcodeproj
 xcode_scheme: FaradayHAL
