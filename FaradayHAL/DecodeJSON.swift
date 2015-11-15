@@ -54,6 +54,8 @@ public class DecodeJSON: Response.Middleware {
 
   public class Handler: RackHandler {
 
+    public init() {}
+
     public func build(app: App) -> Middleware {
       return DecodeJSON(app: app)
     }
