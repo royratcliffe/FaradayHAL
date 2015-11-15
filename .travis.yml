@@ -11,5 +11,8 @@ before_install:
   - gem install cocoapods
   - pod install
 
+script:
+  - set -o pipefail && xcodebuild test -workspace FaradayHAL.workspace -scheme FaradayHAL -sdk iphonesimulator9.1 | xcpretty
+
 xcode_project: FaradayHAL.xcodeproj
 xcode_scheme: FaradayHAL
