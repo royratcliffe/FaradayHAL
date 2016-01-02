@@ -11,6 +11,7 @@
 		7874180E1BE36A6B008FA419 /* FaradayHAL.h in Headers */ = {isa = PBXBuildFile; fileRef = 7874180D1BE36A6B008FA419 /* FaradayHAL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		787418151BE36A6B008FA419 /* FaradayHAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7874180A1BE36A6B008FA419 /* FaradayHAL.framework */; };
 		7874181A1BE36A6B008FA419 /* FaradayHALTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787418191BE36A6B008FA419 /* FaradayHALTests.swift */; };
+		7880718F1C131C6F008C89DF /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880718E1C131C6F008C89DF /* Response.swift */; };
 		78A46A011BEA25FF00870B39 /* DecodeJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A46A001BEA25FF00870B39 /* DecodeJSON.swift */; };
 		8ACED2027FBFE9DE4D66ADB0 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080D7E02F244906C4D38C845 /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		787418141BE36A6B008FA419 /* FaradayHALTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaradayHALTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		787418191BE36A6B008FA419 /* FaradayHALTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaradayHALTests.swift; sourceTree = "<group>"; };
 		7874181B1BE36A6B008FA419 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7880718E1C131C6F008C89DF /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Faraday/Response.swift; sourceTree = "<group>"; };
 		78A46A001BEA25FF00870B39 /* DecodeJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodeJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 				7874180D1BE36A6B008FA419 /* FaradayHAL.h */,
 				784B63B01BE3CDE000A311A2 /* EncodeJSON.swift */,
 				78A46A001BEA25FF00870B39 /* DecodeJSON.swift */,
+				788071901C131C85008C89DF /* Faraday */,
 				7874180F1BE36A6B008FA419 /* Info.plist */,
 			);
 			path = FaradayHAL;
@@ -114,6 +117,14 @@
 				7874181B1BE36A6B008FA419 /* Info.plist */,
 			);
 			path = FaradayHALTests;
+			sourceTree = "<group>";
+		};
+		788071901C131C85008C89DF /* Faraday */ = {
+			isa = PBXGroup;
+			children = (
+				7880718E1C131C6F008C89DF /* Response.swift */,
+			);
+			name = Faraday;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				784B63B11BE3CDE000A311A2 /* EncodeJSON.swift in Sources */,
+				7880718F1C131C6F008C89DF /* Response.swift in Sources */,
 				78A46A011BEA25FF00870B39 /* DecodeJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
