@@ -1,6 +1,6 @@
 // FaradayHAL DecodeJSON.swift
 //
-// Copyright © 2015, Roy Ratcliffe, Pioneering Software, United Kingdom
+// Copyright © 2015, 2016, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the “Software”), to deal
@@ -35,6 +35,9 @@ public class DecodeJSON: Response.Middleware {
     return super.call(env)
   }
 
+  /// Handles response completion. Decodes the response if the content type
+  /// matches expectations. Correct decoding requires an NSData response body as
+  /// input.
   public override func onComplete(env: Env) {
     guard let response = env.response where response.contentType == "application/hal+json" else {
       return super.onComplete(env)
