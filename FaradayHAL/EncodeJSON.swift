@@ -54,7 +54,7 @@ public class EncodeJSON: Faraday.Middleware {
     public func build(app: App) -> Middleware {
       return EncodeJSON(app: app)
     }
-    
+
   }
-  
+
 }
