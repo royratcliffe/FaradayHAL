@@ -1,0 +1,13 @@
+PODS:
+  - Faraday (0.1.6)
+  - HypertextApplicationLanguage (0.1.2)
+
+DEPENDENCIES:
+  - Faraday
+  - HypertextApplicationLanguage
+
+SPEC CHECKSUMS:
+  Faraday: 034764c85693073e68591b2f3de65f0176754026
+  HypertextApplicationLanguage: 615f6fc022ea835321c90b602801d3a08f5112c5
+
+COCOAPODS: 0.39.0
