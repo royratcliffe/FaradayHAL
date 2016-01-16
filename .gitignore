@@ -3,3 +3,6 @@
 # discussion. Benefits of ignoring: smaller source-control repo, no Pod merging
 # conflicts.
 Pods/
+
+# Ignore Xcode-related artifacts.
+*.xcscmblueprint
