@@ -35,6 +35,9 @@ public class DecodeJSON: Response.Middleware {
     return super.call(env)
   }
 
+  /// Handles response completion. Decodes the response if the content type
+  /// matches expectations. Correct decoding requires an NSData response body as
+  /// input.
   public override func onComplete(env: Env) {
     guard let response = env.response where response.contentType == "application/hal+json" else {
       return super.onComplete(env)
