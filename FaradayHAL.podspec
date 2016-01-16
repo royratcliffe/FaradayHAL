@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'FaradayHAL'
-  spec.version = '0.1.2'
+  spec.version = '0.1.3'
   spec.summary = 'Middleware components for encoding and decoding HAL'
   spec.description = <<-DESCRIPTION
   FaradayHAL provides Faraday middleware components for encoding and decoding
