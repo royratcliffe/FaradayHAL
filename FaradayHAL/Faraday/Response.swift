@@ -35,9 +35,12 @@ extension Response {
   ///
   /// What happens if the response body is not a representation? Invokes the
   /// given handler if, and only if, the response contains a
-  /// representation. Throws away the response otherwise.
+  /// representation. Throws away the response otherwise. Only considers the
+  /// response body if the response is successful, that is, if the status code
+  /// lies between 200 and 299 inclusive. Outside that range, no attempt to
+  /// type-cast the body to a HAL representation occurs.
   public func onRepresentation(callback: (Representation) -> Void) -> Response {
-    onComplete { (env) -> Void in
+    onSuccess { (env) -> Void in
       if let representation = env.response?.body as? Representation {
         callback(representation)
       }
