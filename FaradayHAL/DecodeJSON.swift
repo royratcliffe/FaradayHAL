@@ -31,7 +31,7 @@ import HypertextApplicationLanguage
 public class DecodeJSON: Response.Middleware {
 
   public override func call(env: Env) -> Response {
-    env.request?.accepts = ["application/hal+json"] + (env.request?.accepts ?? [])
+    env.request?.headers.accepts = ["application/hal+json"] + (env.request?.headers.accepts ?? [])
     return super.call(env)
   }
 
