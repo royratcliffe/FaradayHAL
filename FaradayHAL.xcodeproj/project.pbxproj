@@ -13,6 +13,7 @@
 		7874181A1BE36A6B008FA419 /* FaradayHALTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787418191BE36A6B008FA419 /* FaradayHALTests.swift */; };
 		7880718F1C131C6F008C89DF /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880718E1C131C6F008C89DF /* Response.swift */; };
 		78A46A011BEA25FF00870B39 /* DecodeJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A46A001BEA25FF00870B39 /* DecodeJSON.swift */; };
+		78B1B6581C5B197000C1AC7F /* ConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1B6571C5B197000C1AC7F /* ConnectionTests.swift */; };
 		8ACED2027FBFE9DE4D66ADB0 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080D7E02F244906C4D38C845 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		7874181B1BE36A6B008FA419 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7880718E1C131C6F008C89DF /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Faraday/Response.swift; sourceTree = "<group>"; };
 		78A46A001BEA25FF00870B39 /* DecodeJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodeJSON.swift; sourceTree = "<group>"; };
+		78B1B6571C5B197000C1AC7F /* ConnectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				787418191BE36A6B008FA419 /* FaradayHALTests.swift */,
+				78B1B6571C5B197000C1AC7F /* ConnectionTests.swift */,
 				7874181B1BE36A6B008FA419 /* Info.plist */,
 			);
 			path = FaradayHALTests;
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7874181A1BE36A6B008FA419 /* FaradayHALTests.swift in Sources */,
+				78B1B6581C5B197000C1AC7F /* ConnectionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
