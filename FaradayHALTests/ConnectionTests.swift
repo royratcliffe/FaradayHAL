@@ -36,7 +36,7 @@ class ConnectionTests: XCTestCase {
   override func setUp() {
     super.setUp()
 
-    connection.URL = NSURL(string: "http://localhost:9292/")
+    connection.URL = NSURL(string: "http://api.m.ox.ac.uk/")
     connection.use(Faraday.EncodeJSON.Handler())
     connection.use(FaradayHAL.DecodeJSON.Handler())
     connection.use(Logger.Handler())
