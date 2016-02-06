@@ -48,7 +48,7 @@ class ConnectionTests: XCTestCase {
     connection.use(URLSession.Handler())
 
     // Accept application/json content type.
-    connection.headers.accepts("application/json")
+    connection.headers.accepts(["application/json"])
   }
 
 }
