@@ -41,6 +41,11 @@ class ConnectionTests: XCTestCase {
     connection.use(FaradayHAL.DecodeJSON.Handler())
     connection.use(Logger.Handler())
     connection.use(URLSession.Handler())
+
+    // The connection to api.m.ox.ac.uk needs to accept `json` as well as
+    // `hal+json`. However, headers merge by replacement. Request-specific
+    // headers replace any connection-specific headers.
+    connection.headers.accepts = ["application/json"]
   }
 
 }
