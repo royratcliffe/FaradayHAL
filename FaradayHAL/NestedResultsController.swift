@@ -27,10 +27,22 @@ import Faraday
 import HypertextApplicationLanguage
 
 /// Fetches nested representations.
+///
+/// The nested results controller is a controller class that accesses a nested
+/// sequence of representations based on a given relation path. Relation paths
+/// represent one or more hypertext-application-language (HAL) link
+/// relations. Forward slashes delimit the relations within the path.
+///
+/// Uses one or more consecutive GET requests to access a specific resource
+/// representation.
 public class NestedResultsController: NSObject {
 
   public var connection: Connection!
 
+  /// Optional base link. Its reference defines the initial GET location for the
+  /// connection. If not present, the controller initially pulls on the
+  /// connection without a path. This assumes that the connection URL already
+  /// includes a path, if one is needed.
   public var link: Link?
 
   public func fetch() -> Self {
@@ -57,11 +69,13 @@ public class NestedResultsController: NSObject {
 
   public var failureHandler: FailureHandler?
 
+  /// Sets up the success handler.
   public func onSuccess(successHandler: SuccessHandler) -> Self {
     self.successHandler = successHandler
     return self
   }
 
+  /// Sets up the failure handler.
   public func onFailure(failureHandler: FailureHandler) -> Self {
     self.failureHandler = failureHandler
     return self
@@ -117,6 +131,7 @@ public class NestedResultsController: NSObject {
     return representation.linkFor(rel)
   }
 
+  /// Runs a new request-response cycle for the next nested representation.
   /// - returns: a new unfinished response for the next nested fetch. The fetch
   ///   starts automatically and runs concurrently when the getter returns.
   var responseForRel: Response? {
@@ -156,6 +171,12 @@ public class NestedResultsController: NSObject {
   /// some representation along the path which does not contain a relation
   /// matching the expected relation.
   func nest(representation: Representation, env: Env) {
+    //
+    //    mutableArrayValueForKey("representations").addObject(representation)
+    //
+    // Instead, add the new representation using Swift's array append method. Do
+    // Swift array methods trigger key-value observations? Clients may want to
+    // observe the representations one-by-one as they download and appear.
     representations.append(representation)
     if hasRel {
       response = responseForRel
