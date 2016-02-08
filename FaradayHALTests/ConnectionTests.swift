@@ -29,18 +29,26 @@ import FaradayHAL
 class ConnectionTests: XCTestCase {
 
   /// Connection to remote test services.
+  ///
   /// The connection gets set up to encode outgoing request bodies as JSON and
   /// decode incoming response bodies as JSON-encoded HAL.
+  ///
+  /// The connection to api.m.ox.ac.uk needs to accept `json` as well as
+  /// `hal+json`. However, headers merge by replacement. Request-specific
+  /// headers replace any connection-specific headers.
   let connection = Connection()
 
   override func setUp() {
     super.setUp()
 
-    connection.URL = NSURL(string: "http://localhost:9292/")
+    connection.URL = NSURL(string: "http://api.m.ox.ac.uk/")
     connection.use(Faraday.EncodeJSON.Handler())
     connection.use(FaradayHAL.DecodeJSON.Handler())
     connection.use(Logger.Handler())
     connection.use(URLSession.Handler())
+
+    // Accept application/json content type.
+    connection.headers.accepts(["application/json"])
   }
 
 }

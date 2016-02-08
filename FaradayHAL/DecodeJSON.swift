@@ -30,8 +30,10 @@ import HypertextApplicationLanguage
 /// body if the response's content type matches `application/hal+json`.
 public class DecodeJSON: Response.Middleware {
 
+  public var accepts = ["application/hal+json", "application/json"]
+
   public override func call(env: Env) -> Response {
-    env.request?.headers.accepts = ["application/hal+json"] + (env.request?.headers.accepts ?? [])
+    env.request?.headers.accepts(env.request?.headers.accepts ?? [])
     return super.call(env)
   }
 
@@ -39,7 +41,10 @@ public class DecodeJSON: Response.Middleware {
   /// matches expectations. Correct decoding requires an NSData response body as
   /// input.
   public override func onComplete(env: Env) {
-    guard let response = env.response where response.contentType == "application/hal+json" else {
+    guard let response = env.response else {
+      return super.onComplete(env)
+    }
+    guard let contentType = response.contentType where accepts.contains(contentType) else {
       return super.onComplete(env)
     }
     guard let data = response.body as? NSData else {
