@@ -33,7 +33,7 @@ public class DecodeJSON: Response.Middleware {
   public var accepts = ["application/hal+json", "application/json"]
 
   public override func call(env: Env) -> Response {
-    env.request?.headers.accepts(env.request?.headers.accepts ?? [])
+    env.request?.headers.accepts(accepts)
     return super.call(env)
   }
 
