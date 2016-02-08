@@ -39,10 +39,17 @@ extension Response {
   /// response body if the response is successful, that is, if the status code
   /// lies between 200 and 299 inclusive. Outside that range, no attempt to
   /// type-cast the body to a HAL representation occurs.
+  ///
+  /// Quietly logs failures to see response bodies as HAL representations. This
+  /// happens when the response body is either not HAL, or the middleware stack
+  /// is not set up to decode the response body as HAL.
   public func onRepresentation(callback: (Representation) -> Void) -> Response {
     onSuccess { (env) -> Void in
       if let representation = env.response?.body as? Representation {
         callback(representation)
+      }
+      else {
+        NSLog("Did you forget to set up middleware HAL response decoding?")
       }
     }
     return self
