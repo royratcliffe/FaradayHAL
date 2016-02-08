@@ -45,6 +45,14 @@ public class NestedResultsController: NSObject {
   /// includes a path, if one is needed.
   public var link: Link?
 
+  /// Starts fetching the first representation or follows the next relation if
+  /// already fetching.
+  ///
+  /// Relations and representations operate in tandem. The representation at
+  /// index 1 derives from the relation at index 0, representation 2 from
+  /// relation 1, and so on. The `relIndex` steps through the `rels` array one
+  /// by one. The representations array arrives one element at a time when each
+  /// request-response cycle completes.
   public func fetch() -> Self {
     if response == nil {
       response = responseForRel
@@ -52,6 +60,7 @@ public class NestedResultsController: NSObject {
     return self
   }
 
+  /// Requests start running *before* the initialiser returns.
   public convenience init(connection: Connection, relPath: String) {
     self.init()
     self.connection = connection
