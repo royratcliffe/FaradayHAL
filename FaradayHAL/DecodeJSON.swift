@@ -29,7 +29,7 @@ import HypertextApplicationLanguage
 /// `application/hal+json` to the request's Accept header. Parses the response
 /// body if the response's content type matches `application/hal+json`.
 @objc(FaradayHALDecodeJSON)
-public class DecodeJSON: Response.Middleware {
+public class DecodeJSON: ResponseMiddleware {
 
   public var accepts = ["application/hal+json", "application/json"]
 
