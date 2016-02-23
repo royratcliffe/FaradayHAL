@@ -27,6 +27,7 @@ import HypertextApplicationLanguage
 
 /// Encodes a hypertext application language (HAL) representation body to
 /// JSON. Does nothing if the body is not a HAL representation.
+@objc(FaradayHALEncodeJSON)
 public class EncodeJSON: Faraday.Middleware {
 
   public override func call(env: Env) -> Response {
@@ -47,6 +48,7 @@ public class EncodeJSON: Faraday.Middleware {
     return app(env)
   }
 
+  @objc(FaradayHALEncodeJSONHandler)
   public class Handler: RackHandler {
 
     public init() {}

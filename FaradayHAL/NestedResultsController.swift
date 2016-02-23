@@ -39,6 +39,7 @@ import HypertextApplicationLanguage
 /// level. Connection headers are the starting point for all request headers
 /// created for the connection. Internal GET requests will take up all the
 /// preconfigured connection headers.
+@objc(FaradayHALNestedResultsController)
 public class NestedResultsController: NSObject {
 
   public var connection: Connection!
