@@ -1,3 +1,9 @@
 use_frameworks!
 
-podspec
+target 'FaradayHAL' do
+  podspec
+end
+
+target 'FaradayHALTests' do
+  podspec
+end
