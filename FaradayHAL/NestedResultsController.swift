@@ -34,7 +34,11 @@ import HypertextApplicationLanguage
 /// relations. Forward slashes delimit the relations within the path.
 ///
 /// Uses one or more consecutive GET requests to access a specific resource
-/// representation.
+/// representation. If the GET requests require any special configuration, such
+/// as an authorisation header, then this must be done at the connection
+/// level. Connection headers are the starting point for all request headers
+/// created for the connection. Internal GET requests will take up all the
+/// preconfigured connection headers.
 public class NestedResultsController: NSObject {
 
   public var connection: Connection!
@@ -60,7 +64,11 @@ public class NestedResultsController: NSObject {
     return self
   }
 
-  /// Requests start running *before* the initialiser returns.
+  /// Requests start running *before* the initialiser returns. This is not an
+  /// issue, even if the response asynchronously finishes before the initialiser
+  /// returns. The controller handles the response on the main queue. Assuming
+  /// that you construct the controller on the main queue, the controller will
+  /// only handle the response synchronously at the next main-queue opportunity.
   public convenience init(connection: Connection, relPath: String) {
     self.init()
     self.connection = connection
@@ -125,7 +133,9 @@ public class NestedResultsController: NSObject {
     guard hasRel else {
       return nil
     }
-    return rels[relIndex++]
+    let rel = rels[relIndex]
+    relIndex += 1
+    return rel
   }
 
   /// Checks for a representation first, before asking for the next relation.
