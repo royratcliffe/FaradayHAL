@@ -133,7 +133,9 @@ public class NestedResultsController: NSObject {
     guard hasRel else {
       return nil
     }
-    return rels[relIndex++]
+    let rel = rels[relIndex]
+    relIndex += 1
+    return rel
   }
 
   /// Checks for a representation first, before asking for the next relation.

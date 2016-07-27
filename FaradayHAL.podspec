@@ -15,6 +15,6 @@ Pod::Spec.new do |spec|
   spec.source_files = 'FaradayHAL/**/*.{swift,h}'
   spec.platform = :ios, '9.0'
   spec.requires_arc = true
-  spec.dependency 'Faraday'
-  spec.dependency 'HypertextApplicationLanguage'
+  spec.dependency 'Faraday', '~> 0.3.0'
+  spec.dependency 'HypertextApplicationLanguage', '~> 0.1.0'
 end
