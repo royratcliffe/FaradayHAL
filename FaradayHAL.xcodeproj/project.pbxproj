@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4BEEDA9A0583571A19DE2359 /* Pods_FaradayHALTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786AB0E8FC1252C802ADBC4A /* Pods_FaradayHALTests.framework */; };
+		782CF2D31D50C0EE00AFC97F /* Faraday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782CF2D21D50C0EE00AFC97F /* Faraday.framework */; };
 		784B63B11BE3CDE000A311A2 /* EncodeJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784B63B01BE3CDE000A311A2 /* EncodeJSON.swift */; };
 		7874180E1BE36A6B008FA419 /* FaradayHAL.h in Headers */ = {isa = PBXBuildFile; fileRef = 7874180D1BE36A6B008FA419 /* FaradayHAL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		787418151BE36A6B008FA419 /* FaradayHAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7874180A1BE36A6B008FA419 /* FaradayHAL.framework */; };
@@ -30,12 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		080D7E02F244906C4D38C845 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		25CE6DDB6D2982947AE306B9 /* Pods-FaradayHALTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaradayHALTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaradayHALTests/Pods-FaradayHALTests.debug.xcconfig"; sourceTree = "<group>"; };
-		3996D6916F7FCA87A77E600C /* Pods_FaradayHAL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaradayHAL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		63ED638F48736CDDE42767EA /* Pods-FaradayHALTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaradayHALTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaradayHALTests/Pods-FaradayHALTests.release.xcconfig"; sourceTree = "<group>"; };
+		782CF2D21D50C0EE00AFC97F /* Faraday.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Faraday.framework; path = "../../../../../Developer/Xcode/DerivedData/_1HutSandbox-drkfjshcgemmcofsyauuecvuqrpt/Build/Products/Debug-iphonesimulator/Faraday.framework"; sourceTree = "<group>"; };
 		784B63B01BE3CDE000A311A2 /* EncodeJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodeJSON.swift; sourceTree = "<group>"; };
-		786AB0E8FC1252C802ADBC4A /* Pods_FaradayHALTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaradayHALTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7874180A1BE36A6B008FA419 /* FaradayHAL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FaradayHAL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7874180D1BE36A6B008FA419 /* FaradayHAL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaradayHAL.h; sourceTree = "<group>"; };
 		7874180F1BE36A6B008FA419 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,8 +43,6 @@
 		78B1B6571C5B197000C1AC7F /* ConnectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionTests.swift; sourceTree = "<group>"; };
 		78B1B65D1C5B214D00C1AC7F /* NestedResultsControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedResultsControllerTests.swift; sourceTree = "<group>"; };
 		78B1B65F1C5B228C00C1AC7F /* NestedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedResultsController.swift; sourceTree = "<group>"; };
-		BC829A7F44C9B3B47994E072 /* Pods-FaradayHAL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaradayHAL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaradayHAL/Pods-FaradayHAL.debug.xcconfig"; sourceTree = "<group>"; };
-		E31FF4A55433A61C110FF13D /* Pods-FaradayHAL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaradayHAL.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaradayHAL/Pods-FaradayHAL.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				782CF2D31D50C0EE00AFC97F /* Faraday.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +59,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				787418151BE36A6B008FA419 /* FaradayHAL.framework in Frameworks */,
-				4BEEDA9A0583571A19DE2359 /* Pods_FaradayHALTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,9 +68,7 @@
 		604B7D4512DDCEF79A6D2DA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				080D7E02F244906C4D38C845 /* Pods.framework */,
-				3996D6916F7FCA87A77E600C /* Pods_FaradayHAL.framework */,
-				786AB0E8FC1252C802ADBC4A /* Pods_FaradayHALTests.framework */,
+				782CF2D21D50C0EE00AFC97F /* Faraday.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -88,7 +80,6 @@
 				787418181BE36A6B008FA419 /* FaradayHALTests */,
 				7874180B1BE36A6B008FA419 /* Products */,
 				604B7D4512DDCEF79A6D2DA3 /* Frameworks */,
-				CDDB7A4B75C7E6B98C1D0A81 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,17 +122,6 @@
 				7880718E1C131C6F008C89DF /* Response.swift */,
 			);
 			name = Faraday;
-			sourceTree = "<group>";
-		};
-		CDDB7A4B75C7E6B98C1D0A81 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BC829A7F44C9B3B47994E072 /* Pods-FaradayHAL.debug.xcconfig */,
-				E31FF4A55433A61C110FF13D /* Pods-FaradayHAL.release.xcconfig */,
-				25CE6DDB6D2982947AE306B9 /* Pods-FaradayHALTests.debug.xcconfig */,
-				63ED638F48736CDDE42767EA /* Pods-FaradayHALTests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,7 +404,6 @@
 		};
 		7874181F1BE36A6B008FA419 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC829A7F44C9B3B47994E072 /* Pods-FaradayHAL.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -445,7 +424,6 @@
 		};
 		787418201BE36A6B008FA419 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E31FF4A55433A61C110FF13D /* Pods-FaradayHAL.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -466,7 +444,6 @@
 		};
 		787418221BE36A6B008FA419 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25CE6DDB6D2982947AE306B9 /* Pods-FaradayHALTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = FaradayHALTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -478,7 +455,6 @@
 		};
 		787418231BE36A6B008FA419 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63ED638F48736CDDE42767EA /* Pods-FaradayHALTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = FaradayHALTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
