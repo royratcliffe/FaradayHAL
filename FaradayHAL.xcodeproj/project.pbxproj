@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1FD2D3AD06267755976C5416 /* Pods_FaradayHAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3996D6916F7FCA87A77E600C /* Pods_FaradayHAL.framework */; };
 		4BEEDA9A0583571A19DE2359 /* Pods_FaradayHALTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786AB0E8FC1252C802ADBC4A /* Pods_FaradayHALTests.framework */; };
 		784B63B11BE3CDE000A311A2 /* EncodeJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784B63B01BE3CDE000A311A2 /* EncodeJSON.swift */; };
 		7874180E1BE36A6B008FA419 /* FaradayHAL.h in Headers */ = {isa = PBXBuildFile; fileRef = 7874180D1BE36A6B008FA419 /* FaradayHAL.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -57,7 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FD2D3AD06267755976C5416 /* Pods_FaradayHAL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,12 +162,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7874181E1BE36A6B008FA419 /* Build configuration list for PBXNativeTarget "FaradayHAL" */;
 			buildPhases = (
-				40D554E6D39A005ADCCC46C9 /* [CP] Check Pods Manifest.lock */,
 				787418051BE36A6B008FA419 /* Sources */,
 				787418061BE36A6B008FA419 /* Frameworks */,
 				787418071BE36A6B008FA419 /* Headers */,
 				787418081BE36A6B008FA419 /* Resources */,
-				CC0A5C97530BD322E856A163 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -287,21 +283,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FaradayHALTests/Pods-FaradayHALTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		40D554E6D39A005ADCCC46C9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		8D0E1A25D471B980FBD1AF47 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,21 +296,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FaradayHALTests/Pods-FaradayHALTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CC0A5C97530BD322E856A163 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FaradayHAL/Pods-FaradayHAL-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
