@@ -31,16 +31,16 @@ public class EncodeJSON: Faraday.Middleware {
 
   public override func call(env: Env) -> Response {
     guard let request = env.request else {
-      return super.call(env)
+      return super.call(env: env)
     }
     guard let body = request.body as? Representation else {
-      return super.call(env)
+      return super.call(env: env)
     }
     guard request.headers["Content-Type"] == nil else {
-      return super.call(env)
+      return super.call(env: env)
     }
-    let object = NSDictionaryRepresentationRenderer.render(body)
-    if let data = try? NSJSONSerialization.dataWithJSONObject(object, options: [.PrettyPrinted]) {
+    let object = NSDictionaryRepresentationRenderer.render(representation: body)
+    if let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]) {
       request.headers["Content-Type"] = "application/hal+json"
       request.body = data
     }
