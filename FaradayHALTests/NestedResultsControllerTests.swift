@@ -33,7 +33,7 @@ class NestedResultsControllerTests: ConnectionTests {
     let expectation = self.expectation(description: "App Library")
     let controller = NestedResultsController(connection: connection, relPath: "app:library")
     // when
-    controller.onSuccess { (controller) -> Void in
+    let _ = controller.onSuccess { (controller) -> Void in
       let root = controller.representations.first
       let appLibrary = controller.representations.last
       let appLibrarySelfLink = appLibrary?.link
@@ -46,7 +46,7 @@ class NestedResultsControllerTests: ConnectionTests {
       XCTAssertEqual(rootAppLibraryLink?.href, appLibrarySelfLink?.href)
       expectation.fulfill()
     }
-    controller.onFailure { (controller, env) -> Void in
+    let _ = controller.onFailure { (controller, env) -> Void in
       let response = env.response
       let body = response?.body
       let representation = body as? Representation
@@ -73,11 +73,11 @@ class NestedResultsControllerTests: ConnectionTests {
     let expectation = self.expectation(description: "App Library No Rel")
     let controller = NestedResultsController(connection: connection, relPath: "app:library/no_rel")
     // when
-    controller.onSuccess { (controller) -> Void in
+    let _ = controller.onSuccess { (controller) -> Void in
       XCTFail()
       expectation.fulfill()
     }
-    controller.onFailure { (controller, env) -> Void in
+    let _ = controller.onFailure { (controller, env) -> Void in
       expectation.fulfill()
     }
     // then
