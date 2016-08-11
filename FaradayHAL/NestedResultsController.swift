@@ -142,7 +142,7 @@ public class NestedResultsController: NSObject {
   /// - returns: a link to use for the next nested fetch.
   var linkForRel: Link? {
     guard let representation = representations.last else {
-      return link ?? Link(rel: "", href: "")
+      return link ?? Link(rel: "", href: ".")
     }
     guard let rel = rel else {
       return nil
