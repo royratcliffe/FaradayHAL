@@ -50,8 +50,7 @@ extension Response {
     onSuccess { (env) -> Void in
       if let representation = env.response?.body as? Representation {
         callback(representation)
-      }
-      else if let response = env.response, contentType = response.contentType {
+      } else if let response = env.response, contentType = response.contentType {
         if ["application/hal+json", "application/json"].contains(contentType) {
           NSLog("Did you forget to set up middleware HAL response decoding?")
         }

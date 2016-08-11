@@ -202,8 +202,7 @@ public class NestedResultsController: NSObject {
       if response == nil {
         failureHandler?(self, env)
       }
-    }
-    else {
+    } else {
       successHandler?(self)
     }
   }

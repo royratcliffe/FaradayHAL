@@ -1,0 +1,8 @@
+disabled_rules:
+  - valid_docs
+  - conditional_binding_cascade
+  - nesting
+
+line_length:
+  warning: 150
+  error: 300
