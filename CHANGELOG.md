@@ -1,5 +1,17 @@
 # Change Log
 
+## [0.2.0](https://github.com/royratcliffe/FaradayHAL/tree/0.2.0)
+
+- Merge branch 'feature/swift_3_0' into develop
+- Use "." path as default href
+- Import Foundation, not UIKit
+- Silence expected ',' joining multi-clause condition warnings
+- Silence result of call unused warnings
+- Convert sources to Swift 3.0
+- Upgrade pod dependencies for Swift 3.0
+
+See [Full Change Log](https://github.com/royratcliffe/FaradayHAL/compare/0.1.8...0.2.0).
+
 ## [0.1.8](https://github.com/royratcliffe/FaradayHAL/tree/0.1.8)
 
 - Run SwiftLint
