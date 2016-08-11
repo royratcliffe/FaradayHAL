@@ -159,7 +159,7 @@ public class NestedResultsController: NSObject {
     }
     return connection.get(path: link.href).onSuccess(callback: { [weak self] (env) -> Void in
       DispatchQueue.main.async() {
-        guard let strongSelf = self where strongSelf.finishResponse(env: env) else {
+        guard let strongSelf = self, strongSelf.finishResponse(env: env) else {
           return
         }
         guard let representation = env.response?.body as? Representation else {
@@ -169,7 +169,7 @@ public class NestedResultsController: NSObject {
         strongSelf.nest(representation: representation, env: env)
       }
     }).onFailure(callback: { [weak self] (env) -> Void in
-      guard let strongSelf = self where strongSelf.finishResponse(env: env) else {
+      guard let strongSelf = self, strongSelf.finishResponse(env: env) else {
         return
       }
       strongSelf.failureHandler?(strongSelf, env)
@@ -219,7 +219,7 @@ public class NestedResultsController: NSObject {
   ///   pending response. The environment response finishes but has become an
   ///   unwanted orphan, and in this case the answer is false.
   func finishResponse(env: Env) -> Bool {
-    guard let response = env.response where response === self.response else {
+    guard let response = env.response, response === self.response else {
       return false
     }
     self.response = nil

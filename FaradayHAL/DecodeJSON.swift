@@ -44,7 +44,7 @@ public class DecodeJSON: Response.Middleware {
     guard let response = env.response else {
       return super.onComplete(env: env)
     }
-    guard let contentType = response.contentType where accepts.contains(contentType) else {
+    guard let contentType = response.contentType, accepts.contains(contentType) else {
       return super.onComplete(env: env)
     }
     guard let data = response.body as? NSData else {
