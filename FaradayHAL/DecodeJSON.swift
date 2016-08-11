@@ -33,8 +33,8 @@ public class DecodeJSON: Response.Middleware {
   public var accepts = ["application/hal+json", "application/json"]
 
   public override func call(env: Env) -> Response {
-    env.request?.headers.accepts(accepts)
-    return super.call(env)
+    env.request?.headers.accepts(contentTypes: accepts)
+    return super.call(env: env)
   }
 
   /// Handles response completion. Decodes the response if the content type
@@ -42,20 +42,20 @@ public class DecodeJSON: Response.Middleware {
   /// input.
   public override func onComplete(env: Env) {
     guard let response = env.response else {
-      return super.onComplete(env)
+      return super.onComplete(env: env)
     }
-    guard let contentType = response.contentType where accepts.contains(contentType) else {
-      return super.onComplete(env)
+    guard let contentType = response.contentType, accepts.contains(contentType) else {
+      return super.onComplete(env: env)
     }
     guard let data = response.body as? NSData else {
-      return super.onComplete(env)
+      return super.onComplete(env: env)
     }
-    guard let object = try? NSJSONSerialization.JSONObjectWithData(data, options: []) else {
-      return super.onComplete(env)
+    guard let object = try? JSONSerialization.jsonObject(with: data as Data, options: []) else {
+      return super.onComplete(env: env)
     }
     if let object = object as? NSDictionary {
       let representation = Representation()
-      NSDictionaryRepresentationParser.parse(representation, object: object)
+      NSDictionaryRepresentationParser.parse(representation: representation, object: object)
       response.body = representation
     }
   }

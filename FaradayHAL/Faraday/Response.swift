@@ -47,10 +47,10 @@ extension Response {
   /// expectations for HAL. In other words, it could have been decoded as HAL
   /// but was not because the middleware decoder failed to do its job.
   public func onRepresentation(callback: (Representation) -> Void) -> Response {
-    onSuccess { (env) -> Void in
+    let _ = onSuccess { (env) -> Void in
       if let representation = env.response?.body as? Representation {
         callback(representation)
-      } else if let response = env.response, contentType = response.contentType {
+      } else if let response = env.response, let contentType = response.contentType {
         if ["application/hal+json", "application/json"].contains(contentType) {
           NSLog("Did you forget to set up middleware HAL response decoding?")
         }
