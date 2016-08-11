@@ -47,7 +47,7 @@ class FaradayHALTests: XCTestCase {
         return Response()
       }
       while let env = envs.popLast() {
-        adapter.saveResponse(env, status: status, body: body, headers: headers)
+        adapter.saveResponse(env: env, status: status, body: body, headers: headers)
       }
     }
 
@@ -69,9 +69,9 @@ class FaradayHALTests: XCTestCase {
   func testNothingAdapter() {
     // given
     let connection = Connection()
-    connection.use(FaradayHAL.EncodeJSON.Handler())
-    connection.use(Faraday.Logger.Handler())
-    connection.use(NothingAdapter.Handler())
+    connection.use(handler: FaradayHAL.EncodeJSON.Handler())
+    connection.use(handler: Faraday.Logger.Handler())
+    connection.use(handler: NothingAdapter.Handler())
     // when
     connection.get().onComplete { env in
       XCTAssertNotNil(env.request)
@@ -80,19 +80,19 @@ class FaradayHALTests: XCTestCase {
       XCTAssertEqual(env.response?.status, 0)
     }
     // then
-    NothingAdapter.saveResponses(0, body: nil, headers: Headers())
+    NothingAdapter.saveResponses(status: 0, body: nil, headers: Headers())
   }
 
   func testEncodeJSON() {
     // given
     let connection = Connection()
-    connection.use(FaradayHAL.EncodeJSON.Handler())
-    connection.use(Faraday.Logger.Handler())
-    connection.use(NothingAdapter.Handler())
+    connection.use(handler: FaradayHAL.EncodeJSON.Handler())
+    connection.use(handler: Faraday.Logger.Handler())
+    connection.use(handler: NothingAdapter.Handler())
     // when
     let response = connection.post { request in
       let representation = Representation()
-      representation.withLink(Link(rel: Link.SelfRel, href: "http://localhost/path/to/self"))
+      representation.with(link: Link(rel: Link.SelfRel, href: "http://localhost/path/to/self"))
       request.body = representation
     }
     response.onComplete { env in
@@ -106,7 +106,7 @@ class FaradayHALTests: XCTestCase {
       XCTAssertNotNil(env.request?.body as? NSData)
     }
     // then
-    NothingAdapter.saveResponses(0, body: nil, headers: Headers())
+    NothingAdapter.saveResponses(status: 0, body: nil, headers: Headers())
   }
 
 }

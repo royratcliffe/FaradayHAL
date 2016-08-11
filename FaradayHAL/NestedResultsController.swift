@@ -111,10 +111,10 @@ public class NestedResultsController: NSObject {
   /// terminates the fetch.
   public var relPath: String {
     get {
-      return rels.joinWithSeparator("/")
+      return rels.joined(separator: "/")
     }
     set(relPath) {
-      rels = relPath.componentsSeparatedByString("/")
+      rels = relPath.components(separatedBy: "/")
 
       // Terminate the fetch.
       relIndex = 0
@@ -147,7 +147,7 @@ public class NestedResultsController: NSObject {
     guard let rel = rel else {
       return nil
     }
-    return representation.linkFor(rel)
+    return representation.link(forHrefOrRel: rel)
   }
 
   /// Runs a new request-response cycle for the next nested representation.
@@ -157,19 +157,19 @@ public class NestedResultsController: NSObject {
     guard let link = linkForRel else {
       return nil
     }
-    return connection.get(link.href).onSuccess({ [weak self] (env) -> Void in
-      dispatch_async(dispatch_get_main_queue()) {
-        guard let strongSelf = self where strongSelf.finishResponse(env) else {
+    return connection.get(path: link.href).onSuccess(callback: { [weak self] (env) -> Void in
+      DispatchQueue.main.async() {
+        guard let strongSelf = self where strongSelf.finishResponse(env: env) else {
           return
         }
         guard let representation = env.response?.body as? Representation else {
           strongSelf.failureHandler?(strongSelf, env)
           return
         }
-        strongSelf.nest(representation, env: env)
+        strongSelf.nest(representation: representation, env: env)
       }
-    }).onFailure({ [weak self] (env) -> Void in
-      guard let strongSelf = self where strongSelf.finishResponse(env) else {
+    }).onFailure(callback: { [weak self] (env) -> Void in
+      guard let strongSelf = self where strongSelf.finishResponse(env: env) else {
         return
       }
       strongSelf.failureHandler?(strongSelf, env)

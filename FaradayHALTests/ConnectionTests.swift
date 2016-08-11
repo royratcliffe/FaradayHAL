@@ -41,14 +41,14 @@ class ConnectionTests: XCTestCase {
   override func setUp() {
     super.setUp()
 
-    connection.URL = NSURL(string: "http://api.m.ox.ac.uk/")
-    connection.use(Faraday.EncodeJSON.Handler())
-    connection.use(FaradayHAL.DecodeJSON.Handler())
-    connection.use(Logger.Handler())
-    connection.use(URLSession.Handler())
+    connection.url = URL(string: "http://api.m.ox.ac.uk/")
+    connection.use(handler: Faraday.EncodeJSON.Handler())
+    connection.use(handler: FaradayHAL.DecodeJSON.Handler())
+    connection.use(handler: Logger.Handler())
+    connection.use(handler: URLSessionAdapter.Handler())
 
     // Accept application/json content type.
-    connection.headers.accepts(["application/json"])
+    connection.headers.accepts(contentTypes: ["application/json"])
   }
 
 }

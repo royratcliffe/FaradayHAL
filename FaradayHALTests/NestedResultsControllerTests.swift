@@ -30,14 +30,14 @@ class NestedResultsControllerTests: ConnectionTests {
 
   func testAppLibrary() {
     // given
-    let expectation = expectationWithDescription("App Library")
+    let expectation = self.expectation(description: "App Library")
     let controller = NestedResultsController(connection: connection, relPath: "app:library")
     // when
     controller.onSuccess { (controller) -> Void in
       let root = controller.representations.first
       let appLibrary = controller.representations.last
       let appLibrarySelfLink = appLibrary?.link
-      let rootAppLibraryLink = root?.linkFor("app:library")
+      let rootAppLibraryLink = root?.link(forHrefOrRel: "app:library")
       XCTAssertEqual(controller.representations.count, 2)
       XCTAssertNotNil(root)
       XCTAssertNotNil(appLibrary)
@@ -57,7 +57,7 @@ class NestedResultsControllerTests: ConnectionTests {
       expectation.fulfill()
     }
     // then
-    waitForExpectationsWithTimeout(30.0) { (error) -> Void in
+    waitForExpectations(timeout: 30.0) { (error) -> Void in
       if let error = error {
         NSLog("%@", error.localizedDescription)
       }
@@ -70,7 +70,7 @@ class NestedResultsControllerTests: ConnectionTests {
   /// `no_rel`. Consequently the nested look-up fails.
   func testAppLibraryNoRel() {
     // given
-    let expectation = expectationWithDescription("App Library No Rel")
+    let expectation = self.expectation(description: "App Library No Rel")
     let controller = NestedResultsController(connection: connection, relPath: "app:library/no_rel")
     // when
     controller.onSuccess { (controller) -> Void in
@@ -81,7 +81,7 @@ class NestedResultsControllerTests: ConnectionTests {
       expectation.fulfill()
     }
     // then
-    waitForExpectationsWithTimeout(10.0) { (error) -> Void in
+    waitForExpectations(timeout: 10.0) { (error) -> Void in
       if let error = error {
         NSLog("%@", error.localizedDescription)
       }
