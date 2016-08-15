@@ -37,7 +37,7 @@ class NestedResultsControllerTests: ConnectionTests {
       let root = controller.representations.first
       let appLibrary = controller.representations.last
       let appLibrarySelfLink = appLibrary?.link
-      let rootAppLibraryLink = root?.link(forHrefOrRel: "app:library")
+      let rootAppLibraryLink = root?.link(for: "app:library")
       XCTAssertEqual(controller.representations.count, 2)
       XCTAssertNotNil(root)
       XCTAssertNotNil(appLibrary)

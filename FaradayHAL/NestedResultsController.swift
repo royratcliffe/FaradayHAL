@@ -147,7 +147,7 @@ public class NestedResultsController: NSObject {
     guard let rel = rel else {
       return nil
     }
-    return representation.link(forHrefOrRel: rel)
+    return representation.link(for: rel)
   }
 
   /// Runs a new request-response cycle for the next nested representation.
