@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.2.1](https://github.com/royratcliffe/FaradayHAL/tree/0.2.1)
+
+- Use link(for:)
+- Upgrade HypertextApplicationLanguage to patch level 3
+
+See [Full Change Log](https://github.com/royratcliffe/FaradayHAL/compare/0.2.0...0.2.1).
+
 ## [0.2.0](https://github.com/royratcliffe/FaradayHAL/tree/0.2.0)
 
 - Merge branch 'feature/swift_3_0' into develop
