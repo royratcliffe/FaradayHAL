@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.2.2](https://github.com/royratcliffe/FaradayHAL/tree/0.2.2)
+
+- Sources in Sources folder; tests in Tests folder
+- Let-underscore-equals replaced by underscore-equals
+- Updated sub-pods
+
+See [Full Change Log](https://github.com/royratcliffe/FaradayHAL/compare/0.2.1...0.2.2).
+
 ## [0.2.1](https://github.com/royratcliffe/FaradayHAL/tree/0.2.1)
 
 - Use link(for:)
