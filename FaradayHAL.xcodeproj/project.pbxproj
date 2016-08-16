@@ -86,8 +86,8 @@
 		787418001BE36A6B008FA419 = {
 			isa = PBXGroup;
 			children = (
-				7874180C1BE36A6B008FA419 /* FaradayHAL */,
-				787418181BE36A6B008FA419 /* FaradayHALTests */,
+				7874180C1BE36A6B008FA419 /* Sources */,
+				787418181BE36A6B008FA419 /* Tests */,
 				7874180B1BE36A6B008FA419 /* Products */,
 				604B7D4512DDCEF79A6D2DA3 /* Frameworks */,
 				CDDB7A4B75C7E6B98C1D0A81 /* Pods */,
@@ -103,7 +103,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7874180C1BE36A6B008FA419 /* FaradayHAL */ = {
+		7874180C1BE36A6B008FA419 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				7874180D1BE36A6B008FA419 /* FaradayHAL.h */,
@@ -113,10 +113,10 @@
 				788071901C131C85008C89DF /* Faraday */,
 				7874180F1BE36A6B008FA419 /* Info.plist */,
 			);
-			path = FaradayHAL;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		787418181BE36A6B008FA419 /* FaradayHALTests */ = {
+		787418181BE36A6B008FA419 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				787418191BE36A6B008FA419 /* FaradayHALTests.swift */,
@@ -124,7 +124,7 @@
 				78B1B65D1C5B214D00C1AC7F /* NestedResultsControllerTests.swift */,
 				7874181B1BE36A6B008FA419 /* Info.plist */,
 			);
-			path = FaradayHALTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		788071901C131C85008C89DF /* Faraday */ = {
@@ -485,7 +485,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 0.1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = FaradayHAL/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.pioneeringsoftware.FaradayHAL;
@@ -507,7 +507,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 0.1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = FaradayHAL/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.pioneeringsoftware.FaradayHAL;
@@ -523,7 +523,7 @@
 			baseConfigurationReference = 25CE6DDB6D2982947AE306B9 /* Pods-FaradayHALTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = FaradayHALTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.pioneeringsoftware.FaradayHALTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -536,7 +536,7 @@
 			baseConfigurationReference = 63ED638F48736CDDE42767EA /* Pods-FaradayHALTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = FaradayHALTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.pioneeringsoftware.FaradayHALTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
