@@ -73,7 +73,7 @@ class FaradayHALTests: XCTestCase {
     connection.use(handler: Faraday.Logger.Handler())
     connection.use(handler: NothingAdapter.Handler())
     // when
-    let _ = connection.get().onComplete { env in
+    _ = connection.get().onComplete { env in
       XCTAssertNotNil(env.request)
       XCTAssertNotNil(env.response)
       XCTAssertEqual(env.request?.method, "GET")
@@ -92,10 +92,10 @@ class FaradayHALTests: XCTestCase {
     // when
     let response = connection.post { request in
       let representation = Representation()
-      let _ = representation.with(link: Link(rel: Link.SelfRel, href: "http://localhost/path/to/self"))
+      _ = representation.with(link: Link(rel: Link.SelfRel, href: "http://localhost/path/to/self"))
       request.body = representation
     }
-    let _ = response.onComplete { env in
+    _ = response.onComplete { env in
       XCTAssertNotNil(env.request)
       XCTAssertNotNil(env.response)
 
