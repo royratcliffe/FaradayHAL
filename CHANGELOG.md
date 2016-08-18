@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.2.4](https://github.com/royratcliffe/FaradayHAL/tree/0.2.4)
+
+- Update dependent pods
+
+See [Full Change Log](https://github.com/royratcliffe/FaradayHAL/compare/0.2.3...0.2.4).
+
 ## [0.2.3](https://github.com/royratcliffe/FaradayHAL/tree/0.2.3)
 
 - Link against HypertextApplicationLanguage 0.2.7 for fixes
