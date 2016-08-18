@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.2.3](https://github.com/royratcliffe/FaradayHAL/tree/0.2.3)
+
+- Link against HypertextApplicationLanguage 0.2.7 for fixes
+- Response.onRepresentation escapes
+- Update sub-pod dependencies
+- Install dependent pods during Travis integration
+- Fix Travis configuration
+
+See [Full Change Log](https://github.com/royratcliffe/FaradayHAL/compare/0.2.2...0.2.3).
+
 ## [0.2.2](https://github.com/royratcliffe/FaradayHAL/tree/0.2.2)
 
 - Sources in Sources folder; tests in Tests folder
