@@ -58,7 +58,7 @@ class FaradayHALTests: XCTestCase {
 
     class Handler: RackHandler {
 
-      func build(app: App) -> Middleware {
+      func build(app: @escaping App) -> Middleware {
         return NothingAdapter(app: app)
       }
 
