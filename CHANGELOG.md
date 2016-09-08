@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.3.0](https://github.com/royratcliffe/FaradayHAL/tree/0.3.0)
+
+- Depends on Faraday 0.5.x
+- Explicit `@escaping` for Xcode 8 GM
+
+See [Full Change Log](https://github.com/royratcliffe/FaradayHAL/compare/0.2.4...0.3.0).
+
 ## [0.2.4](https://github.com/royratcliffe/FaradayHAL/tree/0.2.4)
 
 - Update dependent pods
