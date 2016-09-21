@@ -50,7 +50,10 @@ public class DecodeJSON: Response.Middleware {
     guard let data = response.body as? Data else {
       return super.onComplete(env: env)
     }
-    guard let object = try? JSONSerialization.jsonObject(with: data as Data, options: []) else {
+    var object: Any
+    do {
+      object = try JSONSerialization.jsonObject(with: data, options: [])
+    } catch {
       return super.onComplete(env: env)
     }
     if let object = object as? NSDictionary {
