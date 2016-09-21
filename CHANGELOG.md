@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.3.1](https://github.com/royratcliffe/FaradayHAL/tree/0.3.1)
+
+- Trap JSON parsing failures by catching errors
+- Cast response body to Data rather than NSData
+
+See [Full Change Log](https://github.com/royratcliffe/FaradayHAL/compare/0.3.0...0.3.1).
+
 ## [0.3.0](https://github.com/royratcliffe/FaradayHAL/tree/0.3.0)
 
 - Depends on Faraday 0.5.x
