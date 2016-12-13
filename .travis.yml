@@ -21,3 +21,5 @@ script:
 xcode_sdk: iphonesimulator
 
 xcode_scheme: FaradayHAL
+
+xcode_workspace: FaradayHAL
