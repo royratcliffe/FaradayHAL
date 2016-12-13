@@ -4,8 +4,9 @@ osx_image: xcode8
 before_install:
   - gem install xcpretty
 
-  # Install dependent pods during Travis integration.
-  - pod install
+  # Install dependent pods during Travis integration. Updates the CocoaPods repo
+  # first. Installing does not update the repo by default.
+  - pod install --repo-update
 
 env:
   matrix:
