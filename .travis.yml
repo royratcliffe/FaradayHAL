@@ -10,6 +10,9 @@ before_install:
 
 env:
   matrix:
+    # Travis has multiple SDK destinations matching by name and OS; use the
+    # destination ID to resolve the iOS Simulator, iOS 10.2, iPhone SE platform
+    # uniquely.
     - DESTINATION="id=DB794781-65A7-4884-8D00-AAC3CBD39A44"
 
 script:
