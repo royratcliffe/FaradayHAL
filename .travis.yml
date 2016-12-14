@@ -10,7 +10,7 @@ before_install:
 
 env:
   matrix:
-    - DESTINATION="name=iPhone SE"
+    - DESTINATION="id=DB794781-65A7-4884-8D00-AAC3CBD39A44"
 
 script:
   - xcodebuild -sdk "$TRAVIS_XCODE_SDK" -workspace "$TRAVIS_XCODE_WORKSPACE.xcworkspace" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$DESTINATION" test | xcpretty && exit ${PIPESTATUS[0]}
