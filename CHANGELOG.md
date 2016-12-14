@@ -1,5 +1,26 @@
 # Change Log
 
+## [0.3.2](https://github.com/royratcliffe/FaradayHAL/tree/0.3.2)
+
+Various little fixes for passing tests in Travis CI environment.
+
+- Merge branch 'feature/travis_ci' into develop
+- Added comment about `id` destination
+- Try using an ID to match the simulator
+- Use default platform and OS
+- Specify 10.2 SDK
+- Still not building, trying iPhone SE
+- Also specify platform: iOS Simulator
+- Use iOS 10.2 simulator for Travis testing
+- Use Travis Xcode 8.2 image
+- Fixed type: `xcworkspace`
+- Added workspace extension
+- Added workspace to `xcodebuild` command line options
+- Use workspace instead of project (Travis CI)
+- Travis CI updates CocoaPods repo before installing
+
+See [Full Change Log](https://github.com/royratcliffe/FaradayHAL/compare/0.3.1...0.3.2).
+
 ## [0.3.1](https://github.com/royratcliffe/FaradayHAL/tree/0.3.1)
 
 - Trap JSON parsing failures by catching errors
