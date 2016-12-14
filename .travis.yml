@@ -10,7 +10,7 @@ before_install:
 
 env:
   matrix:
-    - DESTINATION="platform=iOS Simulator,OS=10.2,name=iPhone SE"
+    - DESTINATION="name=iPhone SE"
 
 script:
   - xcodebuild -sdk "$TRAVIS_XCODE_SDK" -workspace "$TRAVIS_XCODE_WORKSPACE.xcworkspace" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$DESTINATION" test | xcpretty && exit ${PIPESTATUS[0]}
