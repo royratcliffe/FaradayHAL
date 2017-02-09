@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'FaradayHAL'
-  spec.version = '0.3.2'
+  spec.version = '0.3.3'
   spec.summary = 'Middleware components for encoding and decoding HAL'
   spec.description = <<-DESCRIPTION
   FaradayHAL provides Faraday middleware components for encoding and decoding
@@ -15,6 +15,6 @@ Pod::Spec.new do |spec|
   spec.source_files = 'Sources/**/*.{swift,h}'
   spec.platform = :ios, '9.0'
   spec.requires_arc = true
-  spec.dependency 'Faraday', '~> 0.5.0'
+  spec.dependency 'Faraday', '~> 0.6.0'
   spec.dependency 'HypertextApplicationLanguage', '~> 0.2.0'
 end

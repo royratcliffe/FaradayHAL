@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.3.3](https://github.com/royratcliffe/FaradayHAL/tree/0.3.3)
+
+Updated for Swift 3.0.2. Now depends on Faraday 0.6.x which supports the latest
+version of Swift.
+
+- Using CocoaPods 1.2.0
+- Depends on Faraday 0.6.x
+- Read-me includes link to change log
+
+See [Full Change Log](https://github.com/royratcliffe/FaradayHAL/compare/0.3.2...0.3.3).
+
 ## [0.3.2](https://github.com/royratcliffe/FaradayHAL/tree/0.3.2)
 
 Various little fixes for passing tests in Travis CI environment.
