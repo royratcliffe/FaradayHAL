@@ -74,7 +74,7 @@ public class NestedResultsController: NSObject {
     self.init()
     self.connection = connection
     self.relPath = relPath
-    _ = fetch()
+    fetch()
   }
 
   // MARK: - Handlers
