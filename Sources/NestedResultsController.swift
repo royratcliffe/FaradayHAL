@@ -88,12 +88,14 @@ public class NestedResultsController: NSObject {
   public var failureHandler: FailureHandler?
 
   /// Sets up the success handler.
+  @discardableResult
   public func onSuccess(successHandler: @escaping SuccessHandler) -> Self {
     self.successHandler = successHandler
     return self
   }
 
   /// Sets up the failure handler.
+  @discardableResult
   public func onFailure(failureHandler: @escaping FailureHandler) -> Self {
     self.failureHandler = failureHandler
     return self
