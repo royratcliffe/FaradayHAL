@@ -16,5 +16,5 @@ Pod::Spec.new do |spec|
   spec.platform = :ios, '9.0'
   spec.requires_arc = true
   spec.dependency 'Faraday', '~> 0.6.0'
-  spec.dependency 'HypertextApplicationLanguage', '~> 0.2.0'
+  spec.dependency 'HypertextApplicationLanguage', '~> 0.3.0'
 end
