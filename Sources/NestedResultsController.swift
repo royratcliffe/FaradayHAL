@@ -57,6 +57,7 @@ public class NestedResultsController: NSObject {
   /// relation 1, and so on. The `relIndex` steps through the `rels` array one
   /// by one. The representations array arrives one element at a time when each
   /// request-response cycle completes.
+  @discardableResult
   public func fetch() -> Self {
     if response == nil {
       response = responseForRel
