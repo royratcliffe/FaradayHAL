@@ -1,4 +1,4 @@
-// FaradayHAL Faraday/Response.swift
+// FaradayHAL Faraday+Response.swift
 //
 // Copyright © 2015, 2016, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
@@ -22,6 +22,7 @@
 //
 //------------------------------------------------------------------------------
 
+import Foundation
 import Faraday
 import HypertextApplicationLanguage
 

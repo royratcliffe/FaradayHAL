@@ -22,6 +22,7 @@
 //
 //------------------------------------------------------------------------------
 
+import Foundation
 import Faraday
 import HypertextApplicationLanguage
 

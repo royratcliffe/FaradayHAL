@@ -1,6 +1,6 @@
-// FaradayHAL EncodeJSON.swift
+// FaradayHAL Package.swift
 //
-// Copyright © 2015, 2016, Roy Ratcliffe, Pioneering Software, United Kingdom
+// Copyright © 2017, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the “Software”), to deal
@@ -22,40 +22,12 @@
 //
 //------------------------------------------------------------------------------
 
-import Foundation
-import Faraday
-import HypertextApplicationLanguage
+import PackageDescription
 
-/// Encodes a hypertext application language (HAL) representation body to
-/// JSON. Does nothing if the body is not a HAL representation.
-public class EncodeJSON: Faraday.Middleware {
-
-  public override func call(env: Env) -> Response {
-    guard let request = env.request else {
-      return super.call(env: env)
-    }
-    guard let body = request.body as? Representation else {
-      return super.call(env: env)
-    }
-    guard request.headers["Content-Type"] == nil else {
-      return super.call(env: env)
-    }
-    let object = NSDictionaryRepresentationRenderer.render(representation: body)
-    if let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]) {
-      request.headers["Content-Type"] = "application/hal+json"
-      request.body = data
-    }
-    return app(env)
-  }
-
-  public class Handler: RackHandler {
-
-    public init() {}
-
-    public func build(app: @escaping App) -> Middleware {
-      return EncodeJSON(app: app)
-    }
-
-  }
-
-}
+let package = Package(
+  name: "FaradayHAL",
+  dependencies: [
+    .Package(url: "https://github.com/royratcliffe/Faraday", majorVersion: 0),
+    .Package(url: "https://github.com/royratcliffe/HypertextApplicationLanguage", majorVersion: 0),
+  ]
+)
