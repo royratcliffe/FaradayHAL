@@ -6,3 +6,8 @@ Pods/
 
 # Ignore Xcode-related artifacts.
 *.xcscmblueprint
+
+# Swift's `build` command places products and caches in `.build` by default. You
+# can change it using the `--build-path` option.
+.build
+Packages
