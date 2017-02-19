@@ -40,11 +40,16 @@ public class EncodeJSON: Faraday.Middleware {
     guard request.headers["Content-Type"] == nil else {
       return super.call(env: env)
     }
-    let object = NSDictionaryRepresentationRenderer.render(representation: body)
-    if let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]) {
-      request.headers["Content-Type"] = "application/hal+json"
-      request.body = data
+    // Render the representation body as JSON by first converting it to a UTF-8
+    // string with the forward slashes unescaped. JSON serialisation escapes all
+    // forward slashes by default. Convert to unescaped string, then string to
+    // data.
+    guard let string = try? body.jsonString(options: [.prettyPrinted]),
+        let data = string?.data(using: String.Encoding.utf8) else {
+      return super.call(env: env)
     }
+    request.headers["Content-Type"] = "application/hal+json"
+    request.body = data
     return app(env)
   }
 

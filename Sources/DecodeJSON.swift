@@ -51,16 +51,10 @@ public class DecodeJSON: Response.Middleware {
     guard let data = response.body as? Data else {
       return super.onComplete(env: env)
     }
-    var object: Any
     do {
-      object = try JSONSerialization.jsonObject(with: data, options: [])
+      response.body = try Representation.from(json: data)
     } catch {
       return super.onComplete(env: env)
-    }
-    if let object = object as? NSDictionary {
-      let representation = Representation()
-      NSDictionaryRepresentationParser.parse(representation: representation, object: object)
-      response.body = representation
     }
   }
 

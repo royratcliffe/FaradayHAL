@@ -28,6 +28,6 @@ let package = Package(
   name: "FaradayHAL",
   dependencies: [
     .Package(url: "https://github.com/royratcliffe/Faraday", majorVersion: 0),
-    .Package(url: "https://github.com/royratcliffe/HypertextApplicationLanguage", majorVersion: 0),
+    .Package(url: "https://github.com/royratcliffe/HypertextApplicationLanguage", majorVersion: 1),
   ]
 )
