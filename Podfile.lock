@@ -1,5 +1,5 @@
 PODS:
-  - Faraday (0.6.1)
+  - Faraday (0.6.3)
   - HypertextApplicationLanguage (1.0.0)
 
 DEPENDENCIES:
@@ -7,7 +7,7 @@ DEPENDENCIES:
   - HypertextApplicationLanguage (~> 1.0.0)
 
 SPEC CHECKSUMS:
-  Faraday: a175b00996cf9e75bbb54880dae925ecf1ec642c
+  Faraday: cf9110f2a569de69d14044eade3ffc9faff90ad2
   HypertextApplicationLanguage: '08d11f57c6317405e5ecbdb182e211e7a8ab8d50'
 
 PODFILE CHECKSUM: 0a474b1988425fb00fb8e000d78efcbb0a5c058c
